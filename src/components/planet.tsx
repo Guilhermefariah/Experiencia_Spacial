@@ -8,7 +8,8 @@ const Planet: React.FC = () => {
         if (!elementRef.current) return;
         
         const cena  = new THREE.Scene();
-
     }, [])
+
+    return <div ref={`elementRef`} />
 } 
 export default Planet

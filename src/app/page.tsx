@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Planet from "@/components/planet";
 
 const Page: React.FC = () => {
   return (
