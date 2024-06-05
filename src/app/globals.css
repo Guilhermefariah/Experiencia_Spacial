@@ -19,7 +19,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
+      to top,
       transparent,
       rgb(var(--background-end-rgb))
     )
@@ -29,5 +29,15 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .float-on-hover {
+    @apply transition-transform duration-300 ease-in-out;
+  }
+
+  .float-on-hover:hover {
+    @apply transform -translate-y-16;
   }
 }
