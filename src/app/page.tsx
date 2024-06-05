@@ -4,7 +4,7 @@ const Page: React.FC = () => {
   return (
     <div>
       <main className="flex flex-col items-center justify-center min-h-screen py-2">
-          <h1 className="text-5xl font-bold float-on-hover">Bem-Vindo</h1>
+          <h1 className="text-5xl font-bold float-on-hover cursor-pointer">Bem-Vindo</h1>
           <p className="text-2xl">Experimente as maravilhas do universo!</p>
       </main>
     </div>

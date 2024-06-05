@@ -18,12 +18,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to top,
+  background: linear-gradient(to top,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -32,12 +29,10 @@ body {
   }
 }
 
-@layer utilities {
-  .float-on-hover {
-    @apply transition-transform duration-300 ease-in-out;
-  }
+.float-on-hover {
+  @apply transition-transform duration-300 ease-in-out;
+}
 
-  .float-on-hover:hover {
-    @apply transform -translate-y-16;
-  }
+.float-on-hover:hover {
+  @apply transform -translate-y-16;
 }
