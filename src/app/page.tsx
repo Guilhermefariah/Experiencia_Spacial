@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 
 const Page: React.FC = () => {
   return (
@@ -12,6 +13,9 @@ const Page: React.FC = () => {
         </h1>
         <p className="mt-3 text-2xl">Experimente as maravilhas do universo!</p>
       </main>
+      <div className="mt-8">
+          <Planet />
+      </div>
     </div>
   )
 }
