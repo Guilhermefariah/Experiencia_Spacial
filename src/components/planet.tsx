@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from 'three';
 
 const Planet: React.FC = () => {
@@ -7,32 +7,33 @@ const Planet: React.FC = () => {
     useEffect(() => {
         if (!elementRef.current) return;
 
-        const scene  = new THREE.Scene();
+        const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         elementRef.current.appendChild(renderer.domElement);
 
-        const geometry = new THREE.SphereGeometry(1, 32, 32);
+        const geometry = new THREE.BoxGeometry(1, 1, 1);
         const material = new THREE.MeshBasicMaterial({ color: 0x87cefa });
-        const planet = new THREE.Mesh(geometry, material);
-        scene.add(planet);
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
 
         camera.position.z = 5;
 
         const animate = () => {
             requestAnimationFrame(animate);
-            planet.rotation.x += 0.01;
-            planet.rotation.x += 0.01;
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
 
             renderer.render(scene, camera);
         }
         animate();
 
-        
-        
+        return () => {
+            elementRef.current?.removeChild(renderer.domElement);
+        }
     }, [])
 
     return <div ref={elementRef} />
-} 
+}
 export default Planet
