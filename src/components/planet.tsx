@@ -1,17 +1,22 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from 'three';
 
-const Planet: React.FC = () => {
+interface PlanetProps {
+    size?: number;
+    className?: string; 
+}
+
+const Planet: React.FC<PlanetProps> = ({ size = 200 }) => {
     const elementRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (!elementRef.current) return;
 
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, size / size, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true });
 
-        renderer.setSize(500, 500); 
+        renderer.setSize(size, size); 
         elementRef.current.appendChild(renderer.domElement);
 
         const geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -33,9 +38,9 @@ const Planet: React.FC = () => {
         return () => {
             elementRef.current?.removeChild(renderer.domElement);
         }     
-    }, [])
+    }, [size])
 
-    return <div ref={elementRef} />
+    return <div ref={elementRef} style={{ width: size, height: size }} />
 
 } 
 export default Planet
