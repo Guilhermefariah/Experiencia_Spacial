@@ -22,7 +22,12 @@ const Planet: React.FC = () => {
 
         const animate = () => {
             requestAnimationFrame(animate);
+            planet.rotation.x += 0.01;
+            planet.rotation.x += 0.01;
+
+            renderer.render(scene, camera);
         }
+        animate();
 
         
         
