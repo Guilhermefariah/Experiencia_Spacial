@@ -32,7 +32,3 @@ body {
 .float-on-hover {
   @apply transition-transform duration-300 ease-in-out;
 }
-
-.float-on-hover:hover {
-  @apply transform -translate-y-16;
-}
