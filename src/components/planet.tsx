@@ -15,7 +15,7 @@ const Planet: React.FC = () => {
         elementRef.current.appendChild(renderer.domElement);
 
         const geometry = new THREE.BoxGeometry(1, 1, 1);
-        const material = new THREE.MeshBasicMaterial({ color: 0x888888, transparent: true, opacity: 0.2 });
+        const material = new THREE.MeshBasicMaterial({ color: 0x000, transparent: true, opacity: 0.80 });
         const cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 
@@ -23,8 +23,8 @@ const Planet: React.FC = () => {
 
         const animate = () => {
             requestAnimationFrame(animate);
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
+            cube.rotation.x += 0.02;
+            cube.rotation.y += 0.02;
 
             renderer.render(scene, camera);
         }
