@@ -37,7 +37,7 @@ space-experience-simulator/
 ### Clone o repositório
 
 ```sh
-git clone https://github.com/your-username/Experiencia_Spacial.git
+git clone https://github.com/Guilhermefariah/Space_Experience.git
 ```
 ### Navegue até o diretório do projeto
 ```sh
