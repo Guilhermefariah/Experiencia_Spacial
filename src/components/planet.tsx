@@ -19,7 +19,10 @@ const Planet: React.FC = () => {
         scene.add(planet);
 
         camera.position.z = 5;
-        
+
+        const animate = () => {
+            requestAnimationFrame(animate);
+        }
 
         
         
