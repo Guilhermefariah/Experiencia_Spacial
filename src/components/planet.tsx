@@ -18,9 +18,10 @@ const Planet: React.FC = () => {
         const planet = new THREE.Mesh(geometry, material);
         scene.add(planet);
 
+        camera.position.z = 5;
         
 
-
+        
         
     }, [])
 
