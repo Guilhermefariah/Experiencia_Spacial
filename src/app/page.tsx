@@ -15,7 +15,7 @@ const Page: React.FC = () => {
         <p className="mt-3 text-2xl">Experimente as maravilhas do universo!</p>
       </main>
       <div className="mt-8">
-          <Planet />
+        <Planet />
       </div>
     </div>
   )
